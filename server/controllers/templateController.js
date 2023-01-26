@@ -31,6 +31,9 @@ const testError = (req, res, next) => {
 const fetchTemplateData = asyncHandler(async (req, res, next) => {
   const template = await Template.findAll();
 
+  // how to throw error in async function
+  // throw new AppError("test for template error handler", 400);
+
   res.status(200).json({
     status: "success",
     results: template?.length,
